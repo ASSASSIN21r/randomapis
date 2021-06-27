@@ -3,18 +3,24 @@ import { Component } from 'react'
 import './api.css'
 import axios from 'axios'
 import API from './api'
+import Contactus from './contactus'
 class Headerbar extends Component{
 
-      
+    contactclicked=()=>{
+        window.location='/contactus'
+        // let tex=document.getElementById('tex')
+        // tex.style.display='none'
+    }
     
     render(){
+        
     return(
       <div>
       <header className='headerbar'>
           <p  onClick={function(){window.location='/'}}>RandomAPI</p>
           <div className='comp'>
           <span className='headerlogin'>
-              <p className='b' id='contactbtn'>ContactUs</p>
+              <p className='b' id='contactbtn' onClick={this.contactclicked}>ContactUs</p>
           </span>
           
           <span className='headerdocs'>
@@ -22,10 +28,7 @@ class Headerbar extends Component{
           </span>
           </div>
       </header>
-      <div id='textlink'>
-      <p className='textl'>Bored?Click to Have Some Fun With</p>
-      <a className='textl' id='randlink' href='#apicards'>RandomAPI's</a>
-      </div>
+      
     </div>)
  }
      
